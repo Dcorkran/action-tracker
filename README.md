@@ -37,9 +37,12 @@ time for each action that has been provided to the addAction function.
 
 ```
 AT.getStats()
-// [{"action":"jump","avg":300},{"action":"swim","avg":100}]
+// '[{"action":"jump","avg":300},{"action":"swim","avg":100}]'
 ```
 
 ## Testing
 
 `npm test`
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
