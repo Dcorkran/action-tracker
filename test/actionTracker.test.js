@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { ActionTracker, getAvg, parseAction, transformAction, validateAction } = require('../actionTracker');
+const { ActionTracker, getAvg, parseAction, transformAction, validateAction } = require('../src/actionTracker');
 
 describe('ActionTracker', () => {
   describe('class creation', () => {

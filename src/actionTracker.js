@@ -11,6 +11,7 @@ const parseAction = stringAction => {
 };
 
 const validateAction = actionObj => {
+  // could be more validations based on use case. Numbers too large, no bools, etc.
   const { action, time } = actionObj;
   if (!action) {
     throw new Error('invalid action - missing action');
@@ -40,6 +41,12 @@ const transformAction = (newAction, existingAction) => {
 class ActionTracker {
   constructor() {
     this.actions = {};
+    // decided to make actions a map. After adding actions it looks like the following:
+    //  actions: {
+    //    jump: { entries: 2, timeSum: 400 },
+    //    swim: { entries: 3, timeSum: 600 }
+    //  }
+    // this is more efficient when adding actions, but less efficient (vs an array) for getStats
   }
 
   addAction = actionString => {
@@ -63,6 +70,8 @@ class ActionTracker {
       const action = this.actions[key];
       const { entries, timeSum } = action;
       stats.push({ action: key, avg: getAvg(timeSum, entries) });
+      // seemed like addAction was being called more, so I calculate the AVG in getStats. This could also
+      // be done when adding the action to the map in addAction.
     }
     return JSON.stringify(stats);
   };
