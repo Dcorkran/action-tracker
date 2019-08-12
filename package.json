@@ -1,0 +1,19 @@
+{
+  "name": "jc-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "actionTracker.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
